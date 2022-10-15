@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Name</td>
+        <td>position</td>
+        <td th:text="'count equal' + ${Employees.size()}">Employee Count</td>
+    </tr>
+    <tr th:each="employee: ${Employees}">
+        <td th:text="${employee.firstname} +' '+ ${employee.lastname}!=null?${employee.lastname}:''">FirstName
+            LastName
+        </td>
+        <td th:text="${employee.position}">Positions</td>
+    </tr>
+</table>
+</body>
+</html>

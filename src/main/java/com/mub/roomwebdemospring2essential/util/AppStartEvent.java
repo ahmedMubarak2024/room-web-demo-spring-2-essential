@@ -21,6 +21,6 @@ public class AppStartEvent implements ApplicationListener<ApplicationReadyEvent>
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
         List<Room> room = this.roomRepository.findAll();
-        room.forEach(System.out::println);
+        //room.forEach(System.out::println);
     }
 }
