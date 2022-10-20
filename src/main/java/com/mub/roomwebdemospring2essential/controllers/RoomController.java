@@ -15,8 +15,11 @@ import java.util.List;
 public class RoomController {
     private final RoomService roomService;
 
+
     public RoomController(RoomService employeeService) {
         this.roomService = employeeService;
+
+
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -26,4 +29,5 @@ public class RoomController {
         model.addAttribute("rooms", allRoom);
         return "roomListing";
     }
+
 }

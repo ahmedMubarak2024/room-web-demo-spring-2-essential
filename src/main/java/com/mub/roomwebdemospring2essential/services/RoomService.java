@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("api/room")
 public class RoomService {
 
     private final RoomRepository roomRepository;
@@ -24,17 +24,14 @@ public class RoomService {
 
     }
 
-    public List<Room> getAllRoom() {
-        return roomRepository.findAll();
-    }
 
     public List<Room> getAllRoom(String name, String bedType) {
         if (name != null || bedType != null)
             return roomRepository.findAll(getRoomSpecification(name, bedType));
         else return roomRepository.findAll();
 
-//               return roomRepository.findAll();
 
     }
+
 
 }
